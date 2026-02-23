@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+<section class="auth-page">
+    <div class="auth-card">
+        <div class="auth-header">
+            <h1>Welcome Back</h1>
+            <p>Log in to leave reviews and save your favorite businesses.</p>
+        </div>
+        <form id="login-form" onsubmit="return PinPoint.handleLogin(event)">
+            <div class="form-group">
+                <label for="login-username">Username</label>
+                <input type="text" id="login-username" name="username" required placeholder="Enter your username" autocomplete="username">
+            </div>
+            <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="password" required placeholder="Enter your password" autocomplete="current-password">
+            </div>
+            <div id="login-error" class="auth-error" style="display:none;"></div>
+            <button type="submit" class="btn-primary auth-submit" id="login-btn">Log In</button>
+        </form>
+        <div class="auth-footer">
+            <p>Don't have an account? <a href="/signup">Sign up</a></p>
+        </div>
+        <div class="auth-demo">
+            <p>Try the demo account:</p>
+            <button class="btn-demo" onclick="PinPoint.demoLogin()">Log in as Demo User</button>
+            <span class="demo-creds">demo / demo123</span>
+        </div>
+    </div>
+</section>
+{% endblock %}

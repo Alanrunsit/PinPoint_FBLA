@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}PinPoint{% endblock %} — Discover Local</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                <span class="logo-icon">&#9906;</span> PinPoint
+            </a>
+            <div class="nav-links">
+                <a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">Explore</a>
+                <a href="/deals" class="nav-link {% if request.path == '/deals' %}active{% endif %}">Deals</a>
+                <a href="/bookmarks" class="nav-link {% if request.path == '/bookmarks' %}active{% endif %}">
+                    <span class="bookmark-icon">&#9829;</span> Saved
+                </a>
+                {% if current_user %}
+                <div class="user-menu">
+                    <button class="user-menu-btn" id="user-menu-btn">
+                        <span class="user-avatar">{{ current_user.display_name[0] | upper }}</span>
+                        <span class="user-name">{{ current_user.display_name }}</span>
+                    </button>
+                    <div class="user-dropdown" id="user-dropdown">
+                        <div class="dropdown-header">
+                            <span class="dropdown-name">{{ current_user.display_name }}</span>
+                            <span class="dropdown-username">@{{ current_user.username }}</span>
+                        </div>
+                        <button class="dropdown-item" onclick="PinPoint.logout()">Log Out</button>
+                    </div>
+                </div>
+                {% else %}
+                <a href="/login" class="nav-link {% if request.path == '/login' %}active{% endif %}">Log In</a>
+                <a href="/signup" class="btn-signup">Sign Up</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p>&copy; 2026 PinPoint — Support your local community</p>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+
+    <script id="bootstrap-data" type="application/json">
+        {{ {'auth': current_user is not none, 'user': {'display_name': current_user.display_name, 'user_id': current_user.id} if current_user else none} | tojson }}
+    </script>
+    <script>
+        const bootstrapDataElement = document.getElementById('bootstrap-data');
+        const bootstrapData = bootstrapDataElement ? JSON.parse(bootstrapDataElement.textContent || '{}') : {};
+        window.__AUTH__ = Boolean(bootstrapData.auth);
+        window.__USER__ = bootstrapData.user ?? null;
+    </script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

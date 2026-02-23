@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<section class="auth-page">
+    <div class="auth-card">
+        <div class="auth-header">
+            <h1>Create Account</h1>
+            <p>Join PinPoint to review and bookmark local businesses.</p>
+        </div>
+        <form id="signup-form" onsubmit="return PinPoint.handleSignup(event)">
+            <div class="form-group">
+                <label for="signup-display-name">Display Name</label>
+                <input type="text" id="signup-display-name" name="display_name" required placeholder="e.g. Jane Doe" autocomplete="name">
+            </div>
+            <div class="form-group">
+                <label for="signup-username">Username</label>
+                <input type="text" id="signup-username" name="username" required placeholder="Choose a username" autocomplete="username">
+            </div>
+            <div class="form-group">
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" name="password" required placeholder="At least 4 characters" autocomplete="new-password">
+            </div>
+            <div id="signup-error" class="auth-error" style="display:none;"></div>
+            <button type="submit" class="btn-primary auth-submit" id="signup-btn">Create Account</button>
+        </form>
+        <div class="auth-footer">
+            <p>Already have an account? <a href="/login">Log in</a></p>
+        </div>
+    </div>
+</section>
+{% endblock %}

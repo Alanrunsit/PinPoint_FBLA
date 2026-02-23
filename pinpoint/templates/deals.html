@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Deals &amp; Coupons{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <h1><span class="deal-accent">&#127873;</span> Deals &amp; Coupons</h1>
+    <p>Exclusive offers from local businesses in your community.</p>
+</section>
+
+<div class="deals-toggle">
+    <button class="pill active" id="btn-active-deals" onclick="PinPoint.loadDeals(true)">Active Deals</button>
+    <button class="pill" id="btn-all-deals" onclick="PinPoint.loadDeals(false)">All Deals</button>
+</div>
+
+<section class="deals-grid" id="deals-grid">
+    <div class="loading-spinner" id="deals-loader">Loading deals&hellip;</div>
+</section>
+
+<div class="empty-state" id="deals-empty" style="display:none;">
+    <div class="empty-icon">&#127873;</div>
+    <h2>No deals available right now</h2>
+    <p>Check back soon for new offers from local businesses.</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => PinPoint.initDealsPage());
+</script>
+{% endblock %}

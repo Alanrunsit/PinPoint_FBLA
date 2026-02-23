@@ -104,7 +104,7 @@ def seed_db():
         return
 
     businesses = [
-        ("The Golden Fork", "food", "Farm-to-table brunch cafe with locally sourced ingredients and artisan coffee.", "142 Maple St", "(555) 234-5678", "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600"),
+        ("The Golden Spoon", "food", "Farm-to-table brunch cafe with locally sourced ingredients and artisan coffee.", "142 Maple St", "(555) 234-5678", "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600"),
         ("Sunrise Bakery", "food", "Family-owned bakery specializing in sourdough breads, pastries, and custom cakes.", "87 Oak Ave", "(555) 345-6789", "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600"),
         ("Bella Trattoria", "food", "Authentic Italian dining with handmade pasta and wood-fired pizzas.", "201 Vine Blvd", "(555) 456-7890", "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600"),
         ("Elm Street Books", "retail", "Independent bookstore with curated selections, author events, and a cozy reading nook.", "55 Elm St", "(555) 567-8901", "https://images.unsplash.com/photo-1526243741027-444d633d7365?w=600"),

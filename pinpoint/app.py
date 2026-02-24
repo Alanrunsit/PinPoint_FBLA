@@ -158,7 +158,7 @@ def seed_db():
     today = datetime.now()
     deals_data = [
         (1, "Pizza Night Special", "Get a free appetizer with any large pizza order.", "Free Appetizer", "PIZZA1", (today + timedelta(days=30)).strftime("%Y-%m-%d")),
-        (2, "Date Night Deal", "Two steakhouse entrees and a bottle of house wine.", "25% Off", "STEAK25", (today + timedelta(days=45)).strftime("%Y-%m-%d")),
+        (2, "Date Night Deal", "Two steakhouse entrees and a bottle of house wine.", "20% Off", "STEAK25", (today + timedelta(days=45)).strftime("%Y-%m-%d")),
         (3, "Burger & Brew Combo", "Any burger with a craft beer or shake at a special price.", "$5 Off", "BURGER5", (today + timedelta(days=20)).strftime("%Y-%m-%d")),
         (4, "Comic Collector Bundle", "Buy 3 comics and get the 4th free from the staff picks wall.", "Buy 3 Get 1", "COMIC4FREE", (today + timedelta(days=60)).strftime("%Y-%m-%d")),
         (5, "Gift Box Special", "Curated gift box with candle, jewelry, and home goods.", "15% Off", "KANIBAL15", (today + timedelta(days=14)).strftime("%Y-%m-%d")),

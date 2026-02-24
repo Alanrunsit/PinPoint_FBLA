@@ -108,16 +108,16 @@ def seed_db():
         ("Pasquale Brick Pizza", "food", "Experience the finest Italian flavors at Pasquale Brick Oven, Milltown’s premier destination for authentic Italian cuisine.", "120 Ryders Ln", "(732) 846-2222", "https://www.pasqualebrickoven.com/", "https://www.pasqualebrickoven.com/wp-content/uploads/2025/06/ADaSGRG.jpg"),
         ("Stage Left Steak", "food", "Enjoy classic steakhouse dining at Stage left steak, a New Brunswick landmark known for premium steaks and an impressive wine selection.", "5 Livingston Ave", "(732) 828-4444", "https://www.stageleft.com/", "https://tb-static.uber.com/prod/image-proc/processed_images/742c8939ee58d6da5635870e91166146/268ee1a1296808aa6eae11eb597de84d.jpeg"),
         ("The Edison Automat", "food", "Offers modern comfort food in the Edison Automat, a trendy spot near Piscataway. It's known for creative burgers, fresh salads, and a fun, casual atmosphere.", "1963 Oak Tree Rd", "(732) 548-7676", "https://www.theedisonautomat.com/", "https://images.squarespace-cdn.com/content/v1/5ce40695cd24900001e0b9d0/1771602506563-VD0MSG6V0DVWZ1NDDRVK/IMG_2145.jpg?format=2500w"),
-        ("Elm Street Books", "retail", "Independent bookstore with curated selections, author events, and a cozy reading nook.", "55 Elm St", "(555) 567-8901", "https://www.elmstreetbooks.com", "https://images.unsplash.com/photo-1526243741027-444d633d7365?w=600"),
-        ("The Vintage Loft", "retail", "Curated vintage clothing and accessories from the 60s through the 90s.", "310 Main St", "(555) 678-9012", "https://www.thevintageloft.com", "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600"),
-        ("Green Thumb Garden Co.", "retail", "Local plant nursery offering houseplants, succulents, and gardening workshops.", "78 Cedar Ln", "(555) 789-0123", "https://www.greenthumbgarden.com", "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600"),
-        ("Precision Auto Care", "services", "Trusted neighborhood mechanic providing honest diagnostics and quality repairs.", "425 Industrial Pkwy", "(555) 890-1234", "https://www.precisionautocare.com", "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=600"),
-        ("Bright Smile Dental", "health", "Gentle family dentistry with modern technology and a welcoming atmosphere.", "190 Wellness Dr", "(555) 901-2345", "https://www.brightsmiledental.com", "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600"),
-        ("FitCore Studio", "health", "Boutique fitness studio offering yoga, pilates, and strength training classes.", "62 Park Ave", "(555) 012-3456", "https://www.fitcorestudio.com", "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600"),
-        ("Pixel & Frame Photography", "services", "Creative photography studio for portraits, events, and small business branding.", "118 Art District Rd", "(555) 123-4567", "https://www.pixelandframe.com", "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=600"),
-        ("Encore Music Academy", "entertainment", "Music lessons for all ages and skill levels, from piano to guitar to drums.", "233 Harmony St", "(555) 234-6780", "https://www.encoremusicacademy.com", "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=600"),
-        ("Escape Room Central", "entertainment", "Immersive puzzle rooms with themes ranging from mystery to sci-fi adventure.", "505 Fun Blvd", "(555) 345-7891", "https://www.escaperoomcentral.com", "https://images.unsplash.com/photo-1590664216212-62e528e26e30?w=600"),
-    ]
+        ("Jay and Silent Bob’s Secret Stash", "retail", "Explore pop culture collectibles at Jay and Silent Bob's secret stash, a famous comic book shop in Red Bank Nj owned by Kevin Smith (film maker). Featuring comics, action figures, and movie memorabilia.", "65 Broad st", "(555) 567-8901", "https://www.elmstreetbooks.com", "https://upload.wikimedia.org/wikipedia/commons/4/4c/7.9.12SecretStashByLuigiNovi1.jpg"),
+        ("Kanibal & Co ", "retail ", "A stylish independent boutique in downtown Jersey City offering curated home goods, artisan gifts, candles, jewelry, and locally inspired finds with a modern-urban aesthetic.", "197 Montgomery St", "(201) 360-9688", "https://www.shopkanibal.com/", "https://www.shopkanibal.com/cdn/shop/files/KanibalCo_Summit_Interiors-27.jpg?v=1767379601&width=2400"),
+        ("Just Jersey", "retail", "Shop locally made products at Just Jersey, a specialty store that sells New Jersey-themed gifts, food items, and handmade goods from local businesses.", "163 South St", "(973) 590-2820", "https://www.justjerseygoods.com/?srsltid=AfmBOopbz89fn7wTZMORdkLbQWBleNujiXDR9uU1q6bXh0FZogjOVrn1", "https://www.justjerseygoods.com/cdn/shop/files/storefront_909b8cd8-6d3e-435c-85d6-ab611dd44776.jpg?v=1689023554&width=5184"),
+        ("PALS Learning Center", "services", "Support academic growth at PALS learning center in East Brunswick NJ, a local tutoring center that provides personalized instruction in reading, math, and test preparation for students of all ages.", "B2 Brier Hill Ct", "(732) 307-7243", "https://palseastbrunswick.com/", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOdJ2YlnIadG6TxgBu3e4WwN5rKmqbNwJ_Yw&s"),
+       ("Natural Care Holistic Center", "health", "A community-centric holistic health practitioner center offering personalized care that blends mind-body approaches, nutrition support, and natural therapies to help people improve overall wellness beyond standard medical treatments.", "35 W Main St", "(201) 428-7474", "https://naturalcarecenternj.com/", "https://naturalcarecenternj.com/wp-content/uploads/2024/04/Colonic-Room-2.jpeg"),
+       ("Lewis Holistic Healing Institute", "health", "A holistic health and functional medicine practice where a naturopathic doctor blends natural medicine, acupuncture, and Chinese herbal therapy to treat chronic conditions by finding and addressing the root cause of illness rather than just symptoms.", "340 E Northfield Rd Suite 2E", "(973) 486-0148", "https://drlisalewis.com/", "https://s3-media0.fl.yelpcdn.com/bphoto/R73z_0wEUfrBGYRbCopYOw/348s.jpg"),
+       ("Revolution Barber Company", "services", "A small, local barber shop where the owner blends old-school barbershop traditions with modern precision fades and hot towel shaves in a relaxed, community-focused atmosphere.", "10 N Black Horse Pike", "(856) 360-0660", "https://www.revbarberco.com/", "https://s3-media0.fl.yelpcdn.com/bphoto/_-piQnqTNcbeS7qiaAw2Hw/348s.jpg"),
+       ("The Dubliner Pub and Music Hall", "entertainment", "A lively Irish pub with a cozy, below-the-surface feel that features live music, open mic nights, and a fun crowd — perfect for casual nights out or catching local bands.", "30 Monmouth St", "(732) 747-6699", "https://www.thedublinhouse.co/", "https://s3-media0.fl.yelpcdn.com/bphoto/O9neZ5DfE_7JeBqs-gPrnQ/258s.jpg"),
+       ("The Stress Factory Comedy Club", "entertainment", "A classic underground-style comedy club where up-and-coming and well-known comedians perform in an intimate space that feels authentic and up close.", "90 Church St", "(732) 545-4242", "https://newbrunswick.stressfactory.com/", "https://www.newbrunswick.com/images/listing/upload/fullsize/1491416230-4-stressfactorystage11.jpg"),
+   ]
 
     for b in businesses:
         db.execute(
@@ -127,26 +127,26 @@ def seed_db():
 
     reviews_data = [
         (1, "Louis.", 5, "Fresh food served quickly, much better flavor and quality."),
-        (1, "R A.", 4, "Pasquale’s is a great place for very good pizza. The food, from entrees to soups, is always delicious."),
-        (2, "Anthony.", 5, "This is easily one of the best steakhouses in the area, with high quality cuts of meat, incredible flavor, and a wine list that pairs perfectly with every single meal."),
-        (2, "L.P.", 5, "The food is consistently excellent, the staff is professional and friendly, and every visit feels like a true 5 star experience."),
-        (2, "Gloria", 5, "So good that we had our wedding here!!"),
-        (3, "Frank W.", 5, "The carbonara is absolutely authentic. Transported me to Rome!"),
-        (3, "Grace K.", 4, "Cozy ambiance and great wine selection."),
-        (4, "Hannah J.", 5, "A hidden gem for book lovers. Their recommendations are spot-on."),
-        (4, "Ian P.", 4, "Love the author events they host. Great community space."),
-        (5, "Julia N.", 5, "Found an amazing vintage denim jacket. Prices are fair."),
-        (6, "Kevin B.", 4, "Wide selection of plants. Staff is very knowledgeable."),
-        (6, "Lisa D.", 5, "Their succulent workshop was so fun! Highly recommend."),
-        (7, "Mike H.", 5, "Honest and affordable. They explained everything clearly."),
-        (7, "Nancy C.", 4, "Quick turnaround on my brake repair. Fair pricing."),
-        (8, "Oscar F.", 5, "Dr. Chen is amazing. Painless cleaning and very thorough."),
-        (9, "Paula G.", 5, "The yoga classes here changed my life. Incredible instructors."),
-        (9, "Quinn A.", 4, "Great variety of classes. Wish they had more evening slots."),
-        (10, "Rachel E.", 5, "They did our family portraits and they turned out beautifully."),
-        (11, "Sam V.", 4, "My daughter loves her piano lessons here. Patient teachers."),
-        (12, "Tina Z.", 5, "The sci-fi room was incredible! We had a blast."),
-        (12, "Umar Y.", 4, "Fun experience for a group outing. Challenging but doable."),
+       (1, "R A.", 4, "Pasquale’s is a great place for very good pizza. The food, from entrees to soups, is always delicious."),
+       (2, "Anthony.", 5, "This is easily one of the best steakhouses in the area, with high quality cuts of meat, incredible flavor, and a wine list that pairs perfectly with every single meal."),
+       (2, "L.P.", 5, "The food is consistently excellent, the staff is professional and friendly, and every visit feels like a true 5 star experience."),
+       (2, "Gloria.", 5, "So good that we had our wedding here!!"),
+       (3, "Jasmine.", 5, "The food is always very neat, fresh, and flavorful, and the portions are generous!"),
+       (3, "Chris.", 4, "Their menu has something for literally everyone, from creative sandwiches to lighter options."),
+       (4, "Mike.", 5, "Even if you’re just browsing, it’s a really fun place to visit, especially if you’re a fan of movies, superheroes, or pop culture."),
+       (4, "Lauren.", 4, "The store has an amazing selection of comics and collectibles, and the staff is super knowledgeable and friendly."),
+       (5, "Emily R.", 4, "Chic little shop with perfectly curated gifts and great vibe."),
+       (6, "Amanda.", 4, "I love that everything in the store is made in New Jersey, and it’s the perfect place to find gifts."),
+       (6, "Steve.", 5, "The store is well organized, the products are high quality, and it’s a great way to support local businesses."),
+       (7, "Priya P.", 5, "The tutors are patient and knowledgeable, and we saw a noticeable improvement in my child’s confidence and grades."),
+       (7, "Micheal.", 4, "They create individualized learning plans that really focus on each student’s needs, and the staff communicates clearly with parents about progress and goals."),
+       (8, "David L.", 5, "The practitioners take time to really listen and offer tailored plans that help me feel more balanced physically."),
+       (9, "Rohan S.", 5, "Dr. Lewis has a unique approach that combines natural therapies with traditional principles, making each session feel both powerful and supportive."),
+       (9, "Ty L.", 4, "The healing here doesn’t feel like a regular doctor visit — it’s restorative and personalized, focusing on wellness."),
+       (10, "Brady V.", 5, "Courtney and the crew take their time with every cut, making sure you leave looking your best."),
+       (11, "Ben C.", 4, "Great drinks and a laid-back vibe make this a must-visit spot for anyone who loves live performances and good times."),
+       (12, "Arya P.", 5, "Amazing energy, great drinks, and nonstop laughs."),
+       (12, "Omar P.", 4, "The comedians are hilarious and the small room makes every set feel personal."),
     ]
 
     for r in reviews_data:
@@ -157,14 +157,14 @@ def seed_db():
 
     today = datetime.now()
     deals_data = [
-        (1, "Brunch for Two Special", "Enjoy two brunch entrees and two drinks at a discounted price.", "20% Off", "BRUNCH20", (today + timedelta(days=30)).strftime("%Y-%m-%d")),
-        (2, "Fresh Bread Friday", "Get a free pastry with any loaf purchase on Fridays.", "Free Pastry", "BREADFRI", (today + timedelta(days=45)).strftime("%Y-%m-%d")),
-        (3, "Date Night Deal", "Two pasta entrees and a bottle of house wine.", "25% Off", "PASTA25", (today + timedelta(days=20)).strftime("%Y-%m-%d")),
-        (4, "Book Club Bundle", "Buy 3 books and get the 4th free from the staff picks shelf.", "Buy 3 Get 1", "READ4FREE", (today + timedelta(days=60)).strftime("%Y-%m-%d")),
-        (5, "Vintage Vault Sale", "Storewide discount on all vintage accessories.", "15% Off", "VINTAGE15", (today + timedelta(days=14)).strftime("%Y-%m-%d")),
-        (6, "Plant Parent Pack", "Two medium houseplants bundled together at a special price.", "$10 Off", "PLANTS10", (today + timedelta(days=25)).strftime("%Y-%m-%d")),
-        (9, "New Member Offer", "First month of unlimited classes at a reduced rate.", "50% Off First Month", "FIT50", (today + timedelta(days=35)).strftime("%Y-%m-%d")),
-        (12, "Group Adventure", "Book a room for 6+ people and save.", "30% Off Groups", "ESCAPE30", (today + timedelta(days=40)).strftime("%Y-%m-%d")),
+        (1, "Pizza Night Special", "Get a free appetizer with any large pizza order.", "Free Appetizer", "PIZZA1", (today + timedelta(days=30)).strftime("%Y-%m-%d")),
+        (2, "Date Night Deal", "Two steakhouse entrees and a bottle of house wine.", "25% Off", "STEAK25", (today + timedelta(days=45)).strftime("%Y-%m-%d")),
+        (3, "Burger & Brew Combo", "Any burger with a craft beer or shake at a special price.", "$5 Off", "BURGER5", (today + timedelta(days=20)).strftime("%Y-%m-%d")),
+        (4, "Comic Collector Bundle", "Buy 3 comics and get the 4th free from the staff picks wall.", "Buy 3 Get 1", "COMIC4FREE", (today + timedelta(days=60)).strftime("%Y-%m-%d")),
+        (5, "Gift Box Special", "Curated gift box with candle, jewelry, and home goods.", "15% Off", "KANIBAL15", (today + timedelta(days=14)).strftime("%Y-%m-%d")),
+        (6, "Jersey Pride Pack", "Bundle any three locally made products at a discount.", "$10 Off", "JERSEY10", (today + timedelta(days=25)).strftime("%Y-%m-%d")),
+        (9, "First Visit Wellness", "First holistic consultation and treatment plan at a reduced rate.", "50% Off First Visit", "HEAL50", (today + timedelta(days=35)).strftime("%Y-%m-%d")),
+        (12, "Group Laugh Night", "Book a table for 6+ people and save on tickets.", "30% Off Groups", "LAUGH30", (today + timedelta(days=40)).strftime("%Y-%m-%d")),
     ]
 
     for d in deals_data:

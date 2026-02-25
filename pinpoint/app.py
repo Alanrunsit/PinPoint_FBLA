@@ -1,11 +1,22 @@
 import sqlite3
 import os
+import logging
 import random
 import functools
+import atexit
 from datetime import datetime, timedelta
+
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask import (
     Flask, render_template, request, jsonify, session, g, redirect, url_for
+)
+from apscheduler.schedulers.background import BackgroundScheduler
+
+from scraper import run_scraper
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(name)s] %(levelname)s: %(message)s",
 )
 
 app = Flask(__name__)
@@ -73,6 +84,9 @@ def init_db():
             discount_text TEXT,
             coupon_code TEXT,
             expiry_date TEXT,
+            source TEXT NOT NULL DEFAULT 'seed',
+            active INTEGER NOT NULL DEFAULT 1,
+            scraped_at TIMESTAMP,
             FOREIGN KEY (business_id) REFERENCES businesses(id)
         );
         CREATE TABLE IF NOT EXISTS bookmarks (
@@ -85,6 +99,17 @@ def init_db():
             UNIQUE(user_id, business_id)
         );
     """)
+
+    for col, definition in [
+        ("source", "TEXT NOT NULL DEFAULT 'seed'"),
+        ("active", "INTEGER NOT NULL DEFAULT 1"),
+        ("scraped_at", "TIMESTAMP"),
+    ]:
+        try:
+            db.execute(f"ALTER TABLE deals ADD COLUMN {col} {definition}")
+        except sqlite3.OperationalError:
+            pass
+
     db.commit()
 
 
@@ -415,6 +440,12 @@ def api_businesses():
         conditions.append("b.category = ?")
         params.append(category)
 
+    q = request.args.get("q", "").strip()
+    if q:
+        conditions.append("(b.name LIKE ? OR b.category LIKE ? OR b.description LIKE ? OR b.address LIKE ?)")
+        like = f"%{q}%"
+        params.extend([like, like, like, like])
+
     where_clause = (" WHERE " + " AND ".join(conditions)) if conditions else ""
     group_clause = " GROUP BY b.id"
 
@@ -541,8 +572,12 @@ def api_deals():
         FROM deals d
         JOIN businesses b ON b.id = d.business_id
     """
+    conditions = []
     if active == "true":
-        query += " WHERE d.expiry_date >= date('now')"
+        conditions.append("d.expiry_date >= date('now')")
+        conditions.append("d.active = 1")
+    if conditions:
+        query += " WHERE " + " AND ".join(conditions)
     query += " ORDER BY d.expiry_date ASC"
     rows = db.execute(query).fetchall()
     return jsonify([{
@@ -555,7 +590,31 @@ def api_deals():
         "discount_text": r["discount_text"],
         "coupon_code": r["coupon_code"],
         "expiry_date": r["expiry_date"],
+        "source": r["source"],
     } for r in rows])
+
+
+# ---------------------------------------------------------------------------
+# Scraper API
+# ---------------------------------------------------------------------------
+
+@app.route("/api/scraper/run", methods=["POST"])
+def api_run_scraper():
+    """Manually trigger the deal scraper."""
+    count = run_scraper(DATABASE)
+    return jsonify({"success": True, "deals_scraped": count})
+
+
+@app.route("/api/scraper/status")
+def api_scraper_status():
+    """Return info about the next scheduled scrape."""
+    job = scheduler.get_job("deal_scraper") if scheduler.running else None
+    if job and job.next_run_time:
+        return jsonify({
+            "scheduler_running": True,
+            "next_run": job.next_run_time.isoformat(),
+        })
+    return jsonify({"scheduler_running": False, "next_run": None})
 
 
 # ---------------------------------------------------------------------------
@@ -565,6 +624,20 @@ def api_deals():
 with app.app_context():
     init_db()
     seed_db()
+
+scheduler = BackgroundScheduler(daemon=True)
+scheduler.add_job(
+    func=lambda: run_scraper(DATABASE),
+    trigger="interval",
+    hours=12,
+    id="deal_scraper",
+    name="Scrape business websites for deals",
+    misfire_grace_time=3600,
+)
+
+if not app.debug or os.environ.get("WERKZEUG_RUN_MAIN") == "true":
+    scheduler.start()
+    atexit.register(lambda: scheduler.shutdown(wait=False))
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

@@ -90,6 +90,7 @@ const PinPoint = (() => {
 
     let currentCategory = 'all';
     let currentSort = 'newest';
+    let currentSearch = '';
 
     async function loadBusinesses() {
         const grid = document.getElementById('business-grid');
@@ -101,13 +102,14 @@ const PinPoint = (() => {
         const params = new URLSearchParams();
         if (currentCategory && currentCategory !== 'all') params.set('category', currentCategory);
         params.set('sort', currentSort);
+        if (currentSearch) params.set('q', currentSearch);
 
         try {
             const resp = await fetch('/api/businesses?' + params.toString());
             const data = await resp.json();
 
             if (data.length === 0) {
-                grid.innerHTML = '<div class="empty-state"><div class="empty-icon">&#128269;</div><h2>No businesses found</h2><p>Try a different category or check back later.</p></div>';
+                grid.innerHTML = '<div class="empty-state"><div class="empty-icon">&#128269;</div><h2>No businesses found</h2><p>Try a different category or search term.</p></div>';
                 return;
             }
             grid.innerHTML = data.map(renderBusinessCard).join('');
@@ -115,6 +117,8 @@ const PinPoint = (() => {
             grid.innerHTML = '<div class="empty-state"><h2>Something went wrong</h2><p>Please refresh the page.</p></div>';
         }
     }
+
+    let _searchTimeout = null;
 
     function initExplorePage() {
         loadBusinesses();
@@ -132,6 +136,17 @@ const PinPoint = (() => {
             currentSort = e.target.value;
             loadBusinesses();
         });
+
+        const searchInput = document.getElementById('hero-search-input');
+        if (searchInput) {
+            searchInput.addEventListener('input', () => {
+                clearTimeout(_searchTimeout);
+                _searchTimeout = setTimeout(() => {
+                    currentSearch = searchInput.value.trim();
+                    loadBusinesses();
+                }, 300);
+            });
+        }
     }
 
     // ---- Business Detail Page ----

@@ -14,7 +14,7 @@ PinPoint is a community-focused local discovery web app where users can explore 
 
 - Python
 - Flask web framework (`pinpoint/app.py`)
-- SQLite database (`pinpoint/pinpoint.db`)
+- SQLite database (`pinpoint/pinpoint.db`, created and seeded on first run)
 - Werkzeug security utilities for password hashing (`generate_password_hash`, `check_password_hash`)
 
 ## Key Features
@@ -33,7 +33,7 @@ PinPoint is a community-focused local discovery web app where users can explore 
 - `pinpoint/templates/`: Server-rendered page templates
 - `pinpoint/static/js/main.js`: Frontend behaviors and API integration
 - `pinpoint/static/css/style.css`: Styles for all pages/components
-- `pinpoint/pinpoint.db`: SQLite database file
+- `pinpoint/scraper.py`: Scrapes business websites for deals (runs every 12 hours)
 - `pinpoint/requirements.txt`: Python dependencies
 
 ## Getting Started

@@ -1,0 +1,8 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# generated on first run by init_db() / seed_db()
+*.db
